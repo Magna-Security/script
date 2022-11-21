@@ -8,7 +8,6 @@ fazerUpdate(){
 }
 
 instalarDocker() {
-  sudo apt install docker.io -y
   # sudo systemctl start docker
   # sudo systemctl enable docker
   # cd ~/Script-VM/docker-mysql
@@ -23,7 +22,7 @@ instalarDocker() {
   sudo apt install docker.io -y
   sudo systemctl start docker
   sudo systemctl enable docker
-  cd ~/Script-VM/docker-mysql
+  cd ~/script/docker-mysql
   sudo docker-compose up -d
   sudo docker start CONTAINER_TOTEMDB
   sudo docker exec -it $(sudo docker ps -aqf "name=containerDB") mysql -u root -p -B -N -e"
