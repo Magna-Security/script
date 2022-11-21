@@ -19,7 +19,7 @@ instalarDocker() {
   # sudo docker exec -it MagnaDB bash
   # -u root -p magna123 -B -N -e
 
-  sudo apt install docker.io -y
+  sudo apt install docker -y
   sudo systemctl start docker
   sudo systemctl enable docker
   # cd ~/script/docker-mysql
