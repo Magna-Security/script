@@ -1,0 +1,17 @@
+# @format
+
+version: "3.3"
+services:
+  database:
+    image: mysql:5.7
+    container_name: CONTAINER_MAGNA
+    environment:
+      MYSQL_DATABASE: "magna"
+      MYSQL_PASSWORD: "magna123"
+      MYSQL_ROOT_PASSWORD: "magna123"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
