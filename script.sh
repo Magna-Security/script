@@ -14,12 +14,12 @@ instalarDocker() {
   # cd ~/Script-VM/docker-mysql
   # sudo docker-compose up -d
   # sudo docker start CONTAINER_TOTEMDB
-  # sudo docker exec -it $(sudo docker ps -aqf "name=containerDB") mysql -u root -p -B -N -e 
+  sudo docker exec -it $(sudo docker ps -aqf "name=containerDB") mysql -u root -p -B -N -e 
   # create database totembd;
 
-  docker run -d -p 3306:3306 --name MagnaDB -e "MYSQL_DATABASE=magna" -e "MYSQL_ROOT_PASSWORD=magna123" mysql:8.0
+  docker run -d -p 3306:3306 --name MagnaDB -e "MYSQL_DATABASE=magna" -e "MYSQL_ROOT_PASSWORD=magna123" mysql:8.0 
   sudo docker exec -it MagnaDB bash
-  -u root -p magna123
+  -u root -p magna123 -B -N -e"
 
   create dabatase magna;
   use magna;
@@ -69,7 +69,7 @@ instalarDocker() {
     senha varchar(50),
     primeiro_acesso tinyint,
     acesso_ao_swing tinyint
-  );
+  );"
 }
 
 # verificando versão do java
