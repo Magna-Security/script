@@ -24,7 +24,7 @@ instalarDocker() {
   sudo systemctl enable docker
   cd ~/script/docker-mysql
   sudo docker-compose up -d
-  sudo docker start CONTAINER_TOTEMDB
+  sudo docker start CONTAINER_MAGNA
   sudo docker exec -it $(sudo docker ps -aqf "name=containerDB") mysql -u root -p -B -N -e"
   create dabatase magna;
   use magna;
