@@ -12,8 +12,8 @@ instalarDocker() {
   sudo apt install docker.io -y
   sudo systemctl start docker
   sudo systemctl enable docker
-  sudo docker pull mysql:5.7
-  sudo docker run -d -p 3306:3306 --name MagnaDB -e "MYSQL_DATABASE=magna" -e "MYSQL_ROOT_PASSWORD=magna123" mysql:5.7
+  sudo docker pull mysql:8.0
+  sudo docker run -d -p 3306:3306 --name MagnaDB -e "MYSQL_DATABASE=magna" -e "MYSQL_ROOT_PASSWORD=magna123" mysql:8.0
   docker exec -it MagnaDB bash mysql -u root -p -B -N -e"
 
   create dabatase magna;
@@ -98,18 +98,22 @@ baixarJava() {
 }
 
 # baixando jar 
-baixarEhExecutarJar() {
+baixarJar() {
   git clone https://github.com/Magna-Security/backend-swing.git 
   
+  
+}
+
+executarJar() {
   cd backend-swing
 
-  git checkout dev
+    git checkout dev
 
-  # entrando nas pastas
-  cd data-colector/target
+    # entrando nas pastas
+    cd data-colector/target
 
-  # executando o java
-  java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
+    # executando o java
+    java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
 }
 
 
@@ -120,9 +124,10 @@ while [ $RESPOSTA -ne "0" ]; do
   echo "======================================"
   echo "1 - Versão do Java                   |"
   echo "2 - Instalar o Java                  |"
-  echo "3 - Baixar e executar Jar            |"
+  echo "3 - Baixar Jar                       |"
   echo "4 - Fazer um update                  |"
   echo "5 - Instalar o Docker                |"
+  echo "6 - Executar o Jar                   |"
   echo "0 - Sair                             |"
   echo "======================================"
   read RESPOSTA
@@ -135,12 +140,14 @@ while [ $RESPOSTA -ne "0" ]; do
   elif [ $RESPOSTA -eq "2" ] 
     then baixarJava
   elif [ $RESPOSTA -eq "3" ] 
-    then baixarEhExecutarJar
+    then baixarJar
   elif [ $RESPOSTA -eq "4" ] 
   then fazerUpdate
   elif [ $RESPOSTA -eq "5" ]
   then 
     instalarDocker
+  elif [ $RESPOSTA -eq "6" ]
+  then executarJar
   elif [ $RESPOSTA -eq "0" ] 
   then
     echo "Saindo"
