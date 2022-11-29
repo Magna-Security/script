@@ -115,6 +115,9 @@ git clone https://github.com/Magna-Security/backend-swing.git
 cd backend-swing
 git checkout console
 
+cd data-colector/target
+java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
+
 sudo docker build -t dockerfile .
 sudo docker run -d -t --rm --name containerjava dockerfile
 
@@ -129,10 +132,13 @@ git clone https://github.com/Magna-Security/backend-swing.git
 cd backend-swing
 git checkout console
 
+cd data-colector/target
+
+java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
+
 sudo docker build -t dockerfile .
 sudo docker run -d -t --name containerjava dockerfile
 
-cd Desktop/script/backend-swing/data-colector/target
 java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 fi
