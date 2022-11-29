@@ -113,7 +113,7 @@ sudo apt install default-jre -y
     sleep 3
 git clone https://github.com/Magna-Security/backend-swing.git
 cd backend-swing
-git checkout console
+git checkout Console
 
 cd data-colector/target
 java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -132,7 +132,7 @@ then
 sudo apt install default-jre -y
 git clone https://github.com/Magna-Security/backend-swing.git
 cd backend-swing
-git checkout console
+git checkout Console
 
 cd data-colector/target
 
