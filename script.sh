@@ -107,7 +107,7 @@ baixarJar() {
 executarJar() {
   cd backend-swing
 
-    git checkout dev
+    git checkout Console
 
     # entrando nas pastas
     cd data-colector/target
