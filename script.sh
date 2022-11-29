@@ -37,7 +37,8 @@ instalarDocker() {
     total_armazenamento_disco1 bigint,
     total_armazenamento_disco2 bigint,
     total_armazenamento_disco3 bigint,
-    total_armazenamento_disco4 bigint
+    total_armazenamento_disco4 bigint,
+    Cidade varchar(100)
   );
 
   CREATE TABLE RegistroServer (
@@ -98,10 +99,14 @@ baixarJava() {
 
 # baixando jar 
 baixarEhExecutarJar() {
-  git clone https://github.com/Magna-Security/backend-swing.git
+  git clone https://github.com/Magna-Security/backend-swing.git 
+  
+  cd backend-swing
+
+  git checkout dev
 
   # entrando nas pastas
-  cd backend-swing/data-colector/target
+  cd data-colector/target
 
   # executando o java
   java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
