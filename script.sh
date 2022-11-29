@@ -12,8 +12,8 @@ instalarDocker() {
   sudo apt install docker.io -y
   sudo systemctl start docker
   sudo systemctl enable docker
-  sudo docker pull mysql:8.0
-  sudo docker run -d -p 3306:3306 --name MagnaDB -e "MYSQL_DATABASE=magna" -e "MYSQL_ROOT_PASSWORD=magna123" mysql:8.0
+  sudo docker pull mysql:5.7
+  sudo docker run -d -p 3306:3306 --name MagnaDB -e "MYSQL_DATABASE=magna" -e "MYSQL_ROOT_PASSWORD=magna123" mysql:5.7
   docker exec -it MagnaDB bash mysql -u root -p -B -N -e"
 
   create dabatase magna;
