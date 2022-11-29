@@ -132,5 +132,8 @@ git checkout console
 sudo docker build -t dockerfile .
 sudo docker run -d -t --name containerjava dockerfile
 
+cd Desktop/script/backend-swing/data-colector/target
+java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
+
 fi
 fi
