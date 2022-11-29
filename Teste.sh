@@ -121,6 +121,8 @@ java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
 sudo docker build -t dockerfile .
 sudo docker run -d -t --rm --name containerjava dockerfile
 
+java -jar data-colector-1.0-SNAPSHOT-jar-with-dependencies.jar
+
 else
 echo "java nao instalado"
 echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
